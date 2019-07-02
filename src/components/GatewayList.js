@@ -38,7 +38,7 @@ const Gateway = ({ gatewayUrl }) => {
 }
 
 const GatewayList = () => {
-  const tableClass = 'w-100 w-80-ns mt4 center collapse sans-serif'
+  const tableClass = 'w-100 w-80-ns mv4 center collapse sans-serif'
   const headerClass = 'fw6 tl tracked pv2 ph3'
 
   return (

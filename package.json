@@ -6,8 +6,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "parcel src/index.html",
+    "lint": "standard",
     "build": "parcel build src/index.html",
-    "lint": "standard"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "ipfs",
@@ -15,7 +16,7 @@
     "status"
   ],
   "author": "Diogo Silva <fsdiogo@gmail.com>",
-  "homepage": "https://github.com/fsdiogo/ipfs-infra-status",
+  "homepage": "https://fsdiogo.github.io/ipfs-infra-status",
   "repository": {
     "type": "git",
     "url": "git@github.com:fsdiogo/ipfs-infra-status.git"
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
+    "gh-pages": "^2.0.1",
     "standard": "^12.0.1"
   },
   "standard": {
