@@ -8,7 +8,7 @@
     "start": "parcel src/index.html",
     "lint": "standard",
     "build": "parcel build src/index.html",
-    "deploy": "npm run build && surge dist"
+    "deploy": "npm run build && surge dist ipfs-infra-status.surge.sh"
   },
   "keywords": [
     "ipfs",
