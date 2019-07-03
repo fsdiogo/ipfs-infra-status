@@ -8,7 +8,7 @@
     "start": "parcel src/index.html",
     "lint": "standard",
     "build": "parcel build src/index.html",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && surge dist"
   },
   "keywords": [
     "ipfs",
@@ -16,7 +16,7 @@
     "status"
   ],
   "author": "Diogo Silva <fsdiogo@gmail.com>",
-  "homepage": "https://fsdiogo.me/ipfs-infra-status",
+  "homepage": "https://ipfs-infra-status.surge.sh",
   "repository": {
     "type": "git",
     "url": "git@github.com:fsdiogo/ipfs-infra-status.git"
@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
-    "gh-pages": "^2.0.1",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "surge": "^0.21.3"
   },
   "standard": {
     "parser": "babel-eslint"
