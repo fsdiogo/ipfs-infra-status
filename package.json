@@ -16,7 +16,7 @@
     "status"
   ],
   "author": "Diogo Silva <fsdiogo@gmail.com>",
-  "homepage": "https://fsdiogo.github.io/ipfs-infra-status",
+  "homepage": "https://fsdiogo.me/ipfs-infra-status",
   "repository": {
     "type": "git",
     "url": "git@github.com:fsdiogo/ipfs-infra-status.git"
