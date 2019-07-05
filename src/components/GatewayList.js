@@ -5,7 +5,7 @@ import GATEWAYS from '../../static/gateways.json'
 const TEST_HASH = 'Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a'
 
 const Gateway = ({ gatewayUrl, incrementChecked, incrementOnline }) => {
-  const [online, setOnline] = useState(false)
+  const [isOnline, setIsOnline] = useState(null)
   const [rtt, setRtt] = useState(0)
 
   useEffect(() => {
@@ -18,11 +18,11 @@ const Gateway = ({ gatewayUrl, incrementChecked, incrementOnline }) => {
       .then(res => res.text())
       .then(() => {
         const rtt = Math.round(performance.now() - start)
-        setOnline(true)
+        setIsOnline(true)
         incrementOnline()
         setRtt(rtt)
       }).catch(() => {
-        setOnline(false)
+        setIsOnline(false)
       })
       .finally(() => {
         incrementChecked()
@@ -34,14 +34,14 @@ const Gateway = ({ gatewayUrl, incrementChecked, incrementOnline }) => {
 
   return (
     <tr>
-      <td className={dataClass}>{online ? '✅ Online' : '❌ Offline'}</td>
+      <td className={dataClass}>{isOnline === null ? '🔎 Testing' : isOnline ? '✅ Online' : '❌ Offline'}</td>
       <td className={dataClass}><a className='link blue' href={gatewayUrl} target='_blank'>{gateway}</a></td>
-      <td className={dataClass}>{online ? `${rtt}ms` : '-'}</td>
+      <td className={dataClass}>{isOnline ? `${rtt}ms` : '-'}</td>
     </tr>
   )
 }
 
-const Badge = ({ checked, total = 0, online = null }) => (
+const Badge = ({ checked = 0, total = 0, online = null }) => (
   online
     ? <span className='ml1 pv1 ph2 white br-pill f7' style={{ backgroundColor: '#00b500' }} title='Online gateways'>{checked}</span>
     : <span className='ml1 pv1 ph2 bg-navy white br-pill f7' title='Checked gateways'>{checked}/{total}</span>
