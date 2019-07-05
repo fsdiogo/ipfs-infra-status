@@ -6,7 +6,7 @@ const Header = () =>
     <a className='w-50' href='https://ipfs.io' target='_blank' title='ipfs.io'>
       <img src={ipfsLogo} height='50' />
     </a>
-    <h1 className='w-50 ma0 tr f3 fw2 montserrat aqua'>IPFS Gateways</h1>
+    <h1 className='w-50 ma0 tr f3 fw2 montserrat aqua'>Public Gateways</h1>
   </header>
 
 export default Header
