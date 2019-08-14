@@ -22,3 +22,10 @@ body, #root {
   flex: 1 0 auto;
   flex-direction: column;
 }
+
+.gatewayIcon
+{
+  position: absolute;
+  width: 20px;
+  margin: -2px 0px 0px -20px;  
+}
