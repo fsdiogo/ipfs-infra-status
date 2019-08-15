@@ -1,13 +1,21 @@
 'use strict'
 
 module.exports = {
+  parser: 'babel-eslint',  
   extends: 'standard',
   parserOptions: {
-    sourceType: 'script'
+    ecmaVersion: 6,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   globals: {
     self: true
   },
+  plugins: [
+    'react'
+  ],
   rules: {
     strict: [2, 'safe'],
     curly: 'error',
@@ -30,6 +38,7 @@ module.exports = {
     'no-labels': 2,
     'no-loop-func': 2,
     'no-nested-ternary': 1,
+    'no-unused-vars': 1,
     'no-script-url': 2,
     'no-warning-comments': 1,
     'quote-props': [2, 'as-needed'],
