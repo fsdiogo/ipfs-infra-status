@@ -1,6 +1,9 @@
 /* global fetch, performance */
 import React, { useState, useEffect } from 'react'
 import GATEWAYS from '../../static/gateways.json'
+import iconError from '../../static/img/glyph_attention.svg'
+import iconOnline from '../../static/img/glyph_small_tick.svg'
+import iconSearch from '../../static/img/glyph_search.svg'
 
 const TEST_HASH = 'Qmaisz6NMhDB51cCvNWa1GMS7LU1pAxdF4Ld6Ft9kZEP2a'
 
@@ -34,7 +37,7 @@ const Gateway = ({ gatewayUrl, incrementChecked, incrementOnline }) => {
 
   return (
     <tr>
-      <td className={dataClass}>{isOnline === null ? '🔎 Testing' : isOnline ? '✅ Online' : '❌ Offline'}</td>
+      <td className={dataClass}><img className='gatewayIcon' src={isOnline === null ? iconSearch : isOnline ? iconOnline : iconError}></img>{isOnline === null ? 'Testing' : isOnline ? 'Online' : 'Offline'}</td>
       <td className={dataClass}><a className='link blue' href={gatewayUrl} target='_blank'>{gateway}</a></td>
       <td className={dataClass}>{isOnline ? `${rtt}ms` : '-'}</td>
     </tr>

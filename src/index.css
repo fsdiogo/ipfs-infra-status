@@ -1,5 +1,6 @@
-@import tachyons;
-@import ipfs-css;
+@import 'tachyons';
+@import 'ipfs-css';
+
 
 /* ==========================================================================
    Document
@@ -20,4 +21,11 @@ body, #root {
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
+}
+
+.gatewayIcon
+{
+  position: absolute;
+  width: 24px;
+  margin: -4px 0px 0px -26px;  
 }
